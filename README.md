@@ -4,7 +4,7 @@ A production-grade healthcare management system built with **FastAPI** + **React
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 healthapp/
@@ -63,7 +63,7 @@ healthapp/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Backend
 
@@ -98,7 +98,7 @@ App → http://localhost:5173
 
 ---
 
-## 🔑 Demo Credentials
+## Demo Credentials
 
 | Role    | Email                    | Password     |
 |---------|--------------------------|--------------|
@@ -109,23 +109,23 @@ App → http://localhost:5173
 
 ---
 
-## ✅ Features Implemented
+## Features Implemented
 
-### 🔹 1. Frontend (React + Vite)
+###  1. Frontend (React + Vite)
 - **Login page** — tabbed sign in / sign up with demo quick-login buttons
 - **Doctor listing** — card grid with specialization filter chips, search, pagination, fee display, book-now
 - **Patient listing** — table view with blood group filter, file manager modal per patient
 - **Appointment booking UI** — 2-step wizard (pick doctor → pick date/time), time-slot grid
 - Axios API service layer with automatic JWT header injection and 401 redirect
 
-### 🔹 2. Real-Time WebSockets (FastAPI)
+###  2. Real-Time WebSockets (FastAPI)
 - `GET /api/appointments/ws/{user_id}` — persistent WebSocket per user
 - **Doctor is notified** instantly when a patient books an appointment
 - **Patient is notified** when doctor changes appointment status
 - Auto-reconnect logic in the React hook (3s backoff)
 - Live indicator badge on Appointments nav item
 
-### 🔹 3. File Upload Module
+###  3. File Upload Module
 - `POST /api/files/upload/{patient_id}` — multipart upload with description
 - Allowed types: PDF, JPEG, PNG, GIF, Word, TXT
 - Max file size: 10 MB (configurable via `.env`)
@@ -134,21 +134,21 @@ App → http://localhost:5173
 - `DELETE /api/files/{id}` — delete file + disk cleanup
 - Files stored in `uploads/` with UUID filenames
 
-### 🔹 4. Advanced Backend Features
+###  4. Advanced Backend Features
 - **Pagination** — all list endpoints support `page` + `page_size` query params, return `total`, `total_pages`
 - **Search & Filtering** — doctors: name/spec/qualification, min/max fee, specialization; patients: name/email/phone, blood group; appointments: status, doctor_id, patient_id
 - **Rate Limiting** — SlowAPI middleware, default 200 req/min per IP
 - **Background Tasks** — welcome email simulation on doctor creation via `BackgroundTasks`
 - **Logging** — structured logging to `logs/app.log` + stdout; request method/path/status/duration logged per request
 
-### 🔹 5. Testing (pytest)
+###  5. Testing (pytest)
 ```bash
 cd backend
 pytest tests/test_api.py -v
 ```
 Covers: auth (register, login, duplicate email, wrong password), doctor CRUD (create, list, get, search, pagination, 404), patient (create, auth guard), appointments (create, status update), health endpoints.
 
-### 🔹 6. Logging
+###  6. Logging
 - Request middleware logs every HTTP call with method, path, status code, response time
 - Router-level logging for important events (user login, doctor/patient created, file uploaded)
 - Error logging on failed auth attempts
@@ -156,7 +156,7 @@ Covers: auth (register, login, duplicate email, wrong password), doctor CRUD (cr
 
 ---
 
-## 🔌 API Reference
+##  API Reference
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -180,7 +180,7 @@ Covers: auth (register, login, duplicate email, wrong password), doctor CRUD (cr
 
 ---
 
-## 🎨 Design System
+##  Design System
 - **Fonts**: Syne (display/headings) + DM Sans (body)
 - **Theme**: Deep navy dark mode with cyan accent (`#38bdf8`)
 - **CSS Variables**: Full token system in `src/index.css`
