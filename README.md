@@ -1,4 +1,4 @@
-# 🏥 MediCore — Full-Stack Healthcare Management System
+# Full-Stack Healthcare Management System
 
 A production-grade healthcare management system built with **FastAPI** + **React**, featuring real-time WebSocket notifications, file uploads, JWT auth, pagination, search, rate limiting, background tasks, logging, and unit tests.
 
