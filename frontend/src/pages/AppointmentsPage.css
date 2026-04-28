@@ -1,0 +1,322 @@
+/* Status tabs */
+.status-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+ 
+.status-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ 
+.status-tab:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+ 
+.status-tab-active {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+ 
+.tab-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+ 
+.tab-dot-all { background: var(--text-muted); }
+.tab-dot-pending { background: var(--warning); }
+.tab-dot-confirmed { background: var(--accent3); }
+.tab-dot-cancelled { background: var(--danger); }
+.tab-dot-completed { background: var(--accent2); }
+ 
+/* Appointment cards */
+.appt-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.appt-card {
+  padding: 0;
+  overflow: hidden;
+  border-left-width: 3px;
+}
+ 
+.appt-card-pending { border-left-color: var(--warning); }
+.appt-card-confirmed { border-left-color: var(--accent3); }
+.appt-card-cancelled { border-left-color: var(--danger); }
+.appt-card-completed { border-left-color: var(--accent2); }
+ 
+.appt-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--border);
+}
+ 
+.appt-id {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+ 
+.badge-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+ 
+.badge-dot-pending { background: var(--warning); animation: pulse 1.5s infinite; }
+.badge-dot-confirmed { background: var(--accent3); }
+.badge-dot-cancelled { background: var(--danger); }
+.badge-dot-completed { background: var(--accent2); }
+ 
+.appt-card-body {
+  padding: 16px 20px;
+}
+ 
+.appt-parties {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+ 
+.party-block { flex: 1; }
+.party-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+.party-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.party-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+ 
+.appt-arrow {
+  font-size: 20px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+ 
+.appt-datetime {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+ 
+.datetime-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+ 
+.appt-reason {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--accent);
+  margin-top: 8px;
+}
+ 
+.appt-notes {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  background: rgba(129,140,248,0.06);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--accent2);
+  margin-top: 6px;
+}
+ 
+.reason-label {
+  color: var(--text);
+  font-weight: 500;
+}
+ 
+.appt-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+ 
+.appt-created {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+ 
+.appt-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+ 
+/* Step indicator for booking modal */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+ 
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+ 
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dim);
+  transition: all 0.2s;
+}
+ 
+.step-active .step-num {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0a0e1a;
+}
+ 
+.step-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+ 
+.step-active .step-label {
+  color: var(--text);
+}
+ 
+.step-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  margin: 0 12px;
+}
+ 
+/* Doctor picker in booking */
+.doctor-pick-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+  margin-bottom: 16px;
+}
+ 
+.doctor-pick-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ 
+.doctor-pick-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface3);
+}
+ 
+.doctor-pick-selected {
+  border-color: var(--accent);
+  background: rgba(56,189,248,0.06);
+}
+ 
+/* Selected doctor summary in step 2 */
+.selected-doc-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(56,189,248,0.05);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+ 
+/* Time slot picker */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+ 
+.time-slot {
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ 
+.time-slot:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+ 
+.time-slot-active {
+  background: rgba(56,189,248,0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
